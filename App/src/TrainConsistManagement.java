@@ -1,38 +1,27 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TrainConsistManagement {
     public static void main(String[] args) {
         System.out.println("====================================");
-        System.out.println("  UC2 - Add Passenger Bogies to Train ");
+        System.out.println("  UC3 - Track Unique Bogie IDs ");
         System.out.println("====================================");
 
-        // Create an ArrayList to hold passenger bogies
-        List<String> trainConsist = new ArrayList<>();
+        Set<String> bogies = new HashSet<>();
 
-        // CREATE (Add bogies)
-        trainConsist.add("Sleeper");
-        trainConsist.add("AC Chair");
-        trainConsist.add("First Class");
+        bogies.add("BG101");
+        bogies.add("BG102");
+        bogies.add("BG103");
+        bogies.add("BG104");
 
-        System.out.println("\nAfter Adding Bogies:");
-        System.out.println("Passenger Bogies : " + trainConsist);
+        bogies.add("BG102");
 
-        // DELETE (Remove bogie)
-        trainConsist.remove("AC Chair");
+        System.out.println("\nBogie IDs After Insertion:");
+        System.out.println(bogies);
 
-        System.out.println("\nAfter Removing 'AC Chair':");
-        System.out.println("Passenger Bogies : " + trainConsist);
+        System.out.println("\nNote:");
+        System.out.println("Duplicates are automatically ignored by HashSet.");
 
-        // SEARCH (Check if exists)
-        System.out.println("\nChecking if 'Sleeper' exists:");
-        boolean exists = trainConsist.contains("Sleeper");
-        System.out.println("Contains Sleeper? : " + exists);
-
-        // FINAL OUTPUT
-        System.out.println("\nFinal Train Passenger Consist:");
-        System.out.println(trainConsist);
-
-        System.out.println("\nUC2 operations completed successfully...");
+        System.out.println("\nUC3 uniqueness validation completed...");
     }
 }
